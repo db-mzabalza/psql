@@ -7,7 +7,7 @@ basic psql commands
 ### List databases
 ```\l```
 
-### List databases
+### Go to database
 ```\c <databaseName>```
 
 ### Lists tables, views and sequences with their associated access privileges.
@@ -22,3 +22,6 @@ basic psql commands
 
 ### Grant all privileges on all tables in the schema:
 ```GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA schema_name TO username;```
+
+### Show columns in table:
+```SELECT * from information_schema.columns WHERE table_name = '<table_name>'```
