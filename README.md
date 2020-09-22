@@ -25,3 +25,6 @@ basic psql commands
 
 ### Show columns in table:
 ```SELECT * from information_schema.columns WHERE table_name = '<table_name>'```
+
+### Save query in .csv table
+```copy (SELECT * FROM "STORE_PRICE_AUGUST" where "Code Produit" = '1267413') To '/home/mzabalza/test.csv' CSV DELIMITER ',' HEADER```
