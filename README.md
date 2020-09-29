@@ -49,3 +49,14 @@ RIGHT JOIN (
 	
 ON orange."INSEE_COM" = sirene."codecommuneetablissement"
 ```
+```
+SELECT * FROM sirene
+WHERE sirene.codecommuneetablissement in (
+	SELECT distinct(depcom) from city
+	WHERE region_name = 'Bretagne'
+)
+AND codecommuneetablissement in (
+	SELECT distinct("INSEE_COM") from orange_ruralite
+	WHERE "Zoning_Simple" = 'RIP'
+)
+```
