@@ -28,3 +28,24 @@ basic psql commands
 
 ### Save query in .csv table
 ```copy (SELECT * FROM "STORE_PRICE_AUGUST" where "Code Produit" = '1267413') To '/home/mzabalza/test.csv' CSV DELIMITER ',' HEADER```
+
+# POSTGRES SQL QUERIES
+
+### JOIN ON SUBQUERIES
+```
+SELECT *
+FROM (
+	SELECT * FROM orange_ruralite
+	WHERE "Zoning_Simple" = 'RIP'
+	
+) orange
+RIGHT JOIN (
+	SELECT siret, codecommuneetablissement FROM sirene
+	WHERE sirene.codecommuneetablissement in (
+		SELECT distinct(depcom) from city
+		WHERE region_name = 'Bretagne'
+	)
+) sirene
+	
+ON orange."INSEE_COM" = sirene."codecommuneetablissement"
+```
