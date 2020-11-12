@@ -23,6 +23,11 @@ basic psql commands
 ### Grant all privileges on all tables in the schema:
 ```GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA schema_name TO username;```
 
+### Grant access to tables which will be created in future
+```
+alter default privileges in schema public grant all on tables to oleroy;
+```
+
 ### Show columns in table:
 ```SELECT * from information_schema.columns WHERE table_name = '<table_name>'```
 
