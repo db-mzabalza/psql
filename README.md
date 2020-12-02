@@ -67,4 +67,4 @@ AND codecommuneetablissement in (
 ```
 
 ### Create table like other table
-```CREATE TABLE article_comp ( like "STORE_PRICE_NOV" including all)
+```CREATE TABLE article_comp ( like "STORE_PRICE_NOV" including all)```
