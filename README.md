@@ -65,3 +65,6 @@ AND codecommuneetablissement in (
 	WHERE "Zoning_Simple" = 'RIP'
 )
 ```
+
+### Create table like other table
+```CREATE TABLE article_comp ( like "STORE_PRICE_NOV" including all)
