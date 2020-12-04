@@ -68,3 +68,10 @@ AND codecommuneetablissement in (
 
 ### Create table like other table
 ```CREATE TABLE article_comp ( like "STORE_PRICE_NOV" including all)```
+
+### Copy values from one column to another
+```
+UPDATE article_comp
+SET "Code_Produit" = "Gencod"
+WHERE concurrent = 'mrbricolage'
+```
