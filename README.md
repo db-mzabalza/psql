@@ -66,12 +66,31 @@ AND codecommuneetablissement in (
 )
 ```
 
-### Create table like other table
+### Create table like other table (table, but no content)
 ```CREATE TABLE article_comp ( like "STORE_PRICE_NOV" including all)```
+
+
+### Create table like other table (table, but no content)
+```
+CREATE TABLE mycopy AS
+SELECT * FROM mytable;
+```
 
 ### Copy values from one column to another
 ```
 UPDATE article_comp
 SET "Code_Produit" = "Gencod"
 WHERE concurrent = 'mrbricolage'
+```
+
+### REMOVE .0 FROM A COLUMN
+```
+UPDATE article_comp SET "Code_Produit"=trim(trailing '.0' FROM "Code_Produit"::text)
+WHERE concurrent = 'mrbricolage'
+```
+
+### SELECT ORDER BY DATE
+```
+select * from  comments
+order by created_at desc;
 ```
