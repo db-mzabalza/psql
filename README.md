@@ -94,3 +94,15 @@ WHERE concurrent = 'mrbricolage'
 select * from  comments
 order by created_at desc;
 ```
+
+### DELETE ORDER BY DATE
+```
+DELETE FROM table_name
+WHERE condition;
+```
+
+### INSERT VALUES INTO A TABLE FROM A SELECT QUERY
+```
+insert into <tableName1>
+select * from <tableName2> where item_id=2;
+```
