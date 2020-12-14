@@ -106,3 +106,9 @@ WHERE condition;
 insert into <tableName1>
 select * from <tableName2> where item_id=2;
 ```
+
+### Groupby and count
+```
+SELECT count(sirene) as sirene_count, activiteprincipaleetablissement, trancheeffectifsetablissement  FROM sirene
+group by activiteprincipaleetablissement, trancheeffectifsetablissement
+```
