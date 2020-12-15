@@ -13,6 +13,12 @@ basic psql commands
 ### Lists tables, views and sequences with their associated access privileges.
 ```\dp```
 
+### Create User
+```CREATE USER melkhalil with PASSWORD '<passwordName>';```
+
+### Altering existing users permissions
+```ALTER USER melkhalil with CREATEDB, CREATEROLE, CREATEUSER, SUPERUSER ;```
+
 ### Give all the permissions to a user on a DB
 ```GRANT ALL PRIVILEGES ON DATABASE <dbName> to <userName>;```
 
