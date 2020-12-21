@@ -118,3 +118,10 @@ select * from <tableName2> where item_id=2;
 SELECT count(sirene) as sirene_count, activiteprincipaleetablissement, trancheeffectifsetablissement  FROM sirene
 group by activiteprincipaleetablissement, trancheeffectifsetablissement
 ```
+
+### SHOW ACTIVE CONNECTIONS AND CURRENT ACTIVITY ON DATABASE
+```
+select *
+from pg_stat_activity
+where datname = 'mydatabasename';
+```
