@@ -125,3 +125,23 @@ select *
 from pg_stat_activity
 where datname = 'mydatabasename';
 ```
+
+### DROP DUPLICATES GENERAL
+```
+DELETE from matching_products a using matching_products b
+WHERE a = b 
+AND a.ctid < b.ctid
+```
+
+### DROP DUPLICATES BY COLUMNS
+```
+DELETE from matching_products a using matching_products b
+WHERE a.ctid < b.ctid
+AND  a.material_code = b.material_code
+AND  a.kff_article = b.kff_article
+AND  a.concurrent = b.concurrent
+AND  a.conc_product_label = b.conc_product_label
+AND  a.conc_product_price = b.conc_product_price
+AND  a.conc_product_url = b.conc_product_url
+AND  a.conc_product_img = b.conc_product_img;
+```
