@@ -81,6 +81,20 @@ AND codecommuneetablissement in (
 CREATE TABLE mycopy AS
 SELECT * FROM mytable;
 ```
+### CREATE TABLE FROM SELECTION OF OTHER
+```
+CREATE TABLE article_comp_jan AS
+SELECT 
+"Id Magasin" as "Id_Magasin",
+"Enseigne",
+"Code Produit" as "Code_Produit",
+"Prix Num" as "Prix_Num",
+"Remise",
+"Gencod",
+"Marque",
+"Concurrent" as "concurrent"
+from "STORE_PRICE_DEC"
+```
 
 ### Copy values from one column to another
 ```
@@ -145,3 +159,10 @@ AND  a.conc_product_price = b.conc_product_price
 AND  a.conc_product_url = b.conc_product_url
 AND  a.conc_product_img = b.conc_product_img;
 ```
+### ALTER TABLE NAME
+```
+ALTER TABLE IF EXISTS article_comp
+RENAME TO article_comp_old;
+
+
+
