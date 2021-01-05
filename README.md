@@ -34,6 +34,16 @@ basic psql commands
 alter default privileges in schema public grant all on tables to oleroy;
 ```
 
+### Restart postgres
+```
+sudo systemctl restart postgresql.service
+```
+
+### Check logs
+```
+tail -f postgresql-11-main.log
+```
+
 ### Show columns in table:
 ```SELECT * from information_schema.columns WHERE table_name = '<table_name>'```
 
