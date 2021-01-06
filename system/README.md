@@ -16,3 +16,13 @@ sudo systemctl restart postgresql.service
 ```
 SELECT pg_database_size('dbname')
 ```
+
+### save database
+```
+pg_dump <db_name> > <output_file>
+```
+```
+sudo su - postgres
+pg_dump db_name > db_name.bak
+```
+and find backup in /var/lib/postgresql
