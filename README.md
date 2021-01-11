@@ -143,12 +143,6 @@ SELECT count(sirene) as sirene_count, activiteprincipaleetablissement, trancheef
 group by activiteprincipaleetablissement, trancheeffectifsetablissement
 ```
 
-### SHOW ACTIVE CONNECTIONS AND CURRENT ACTIVITY ON DATABASE
-```
-select *
-from pg_stat_activity
-where datname = 'mydatabasename';
-```
 
 ### DROP DUPLICATES GENERAL
 ```
