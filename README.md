@@ -167,6 +167,24 @@ AND  a.conc_product_img = b.conc_product_img;
 ```
 ALTER TABLE IF EXISTS article_comp
 RENAME TO article_comp_old;
+```
 
+### CHECK INDEXES
+```
+SELECT
+    tablename,
+    indexname,
+    indexdef
+FROM
+    pg_indexes
+WHERE
+    schemaname = 'public'
+ORDER BY
+    tablename,
+    indexname;
+```
 
-
+### CREATE INDEX
+```
+CREATE INDEX index_id_august ON public."STORE_PRICE_AUGUST" USING btree ("Id Magasin", "Code Produit");
+```
