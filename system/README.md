@@ -26,3 +26,10 @@ sudo su - postgres
 pg_dump db_name > db_name.bak
 ```
 and find backup in /var/lib/postgresql
+
+### SHOW ACTIVE CONNECTIONS AND CURRENT ACTIVITY ON DATABASE
+```
+select *
+from pg_stat_activity
+where datname = 'mydatabasename';
+```
