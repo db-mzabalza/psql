@@ -27,6 +27,16 @@ pg_dump db_name > db_name.bak
 ```
 and find backup in /var/lib/postgresql
 
+## Save dump table
+```
+pg_dump  --table="public.\"STORE_PRICE_JUNE\"" kf_pricing > store_price_june.dump
+```
+
+## Load dumped table
+```
+psql -U mzabalza -p 5432 -h localhost -d test < my_dump_2.sql
+```
+
 ### SHOW ACTIVE CONNECTIONS AND CURRENT ACTIVITY ON DATABASE
 ```
 select *
