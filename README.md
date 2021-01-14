@@ -17,7 +17,7 @@ basic psql commands
 ```CREATE USER melkhalil with PASSWORD '<passwordName>';```
 
 ### Altering existing users permissions
-```ALTER USER melkhalil with CREATEDB, CREATEROLE, CREATEUSER, SUPERUSER ;```
+```ALTER USER ttsering with CREATEDB CREATEROLE SUPERUSER;```
 
 ### Give all the permissions to a user on a DB
 ```GRANT ALL PRIVILEGES ON DATABASE <dbName> to <userName>;```
