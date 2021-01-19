@@ -13,4 +13,11 @@ FROM "STORE_PRICE_NOV_2"
 ```
 ### Manually pivot table (columns to rows)
 ```sql
+SELECT "Concurrent", "Id Magasin", "Code Produit", avg("Prix November") AS avg_prix, '01-11-2020' date, 'common' perimeter
+FROM "store_price_nov_dec"
+GROUP BY "Concurrent", "Id Magasin", "Code Produit"
+UNION ALL
+SELECT "Concurrent", "Id Magasin", "Code Produit", avg("Prix December") AS avg_prix, '01-12-2020' date, 'common' perimeter
+FROM "store_price_nov_dec"
+GROUP BY "Concurrent", "Id Magasin", "Code Produit"
 ```
