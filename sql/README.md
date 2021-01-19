@@ -11,3 +11,6 @@ GROUP BY "Ncl Niv1", "Concurrent"
 SELECT concat_ws('_', "Concurrent", "Code Produit", "Id Magasin")
 FROM "STORE_PRICE_NOV_2"
 ```
+### Manually pivot table (columns to rows)
+```sql
+```
