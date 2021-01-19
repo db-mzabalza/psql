@@ -5,3 +5,9 @@ FROM "STORE_PRICE_NOV_2"
 WHERE "Code Produit" IN (SELECT distinct("Code Produit") FROM "STORE_PRICE_DEC")
 GROUP BY "Ncl Niv1", "Concurrent"
 ```
+
+### Concat 3 columns
+```sql
+SELECT concat_ws('_', "Concurrent", "Code Produit", "Id Magasin")
+FROM "STORE_PRICE_NOV_2"
+```
