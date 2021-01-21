@@ -164,13 +164,13 @@ AND  a.conc_product_url = b.conc_product_url
 AND  a.conc_product_img = b.conc_product_img;
 ```
 ### ALTER TABLE NAME
-```
+```sql
 ALTER TABLE IF EXISTS article_comp
 RENAME TO article_comp_old;
 ```
 
 ### CHECK INDEXES
-```
+```sql
 SELECT
     tablename,
     indexname,
@@ -185,6 +185,14 @@ ORDER BY
 ```
 
 ### CREATE INDEX
-```
+```sql
 CREATE INDEX index_id_august ON public."STORE_PRICE_AUGUST" USING btree ("Id Magasin", "Code Produit");
+```
+
+### CAST VARIABLES INDEX
+```sql
+SELECT *
+FROM table_a a
+LEFT JOIN table_b b
+ON column_a::VARCHAR = column_b 
 ```
