@@ -53,7 +53,7 @@ tail -f postgresql-11-main.log
 # POSTGRES SQL QUERIES
 
 ### JOIN ON SUBQUERIES
-```
+```sql
 SELECT *
 FROM (
 	SELECT * FROM orange_ruralite
@@ -83,16 +83,18 @@ AND codecommuneetablissement in (
 ```
 
 ### Create table like other table (table, but no content)
-```CREATE TABLE article_comp ( like "STORE_PRICE_NOV" including all)```
+```sql
+CREATE TABLE article_comp ( like "STORE_PRICE_NOV" including all)
+```
 
 
 ### Create table like other table (table, but no content)
-```
+```sql
 CREATE TABLE mycopy AS
 SELECT * FROM mytable;
 ```
 ### CREATE TABLE FROM SELECTION OF OTHER
-```
+```sql
 CREATE TABLE article_comp_jan AS
 SELECT 
 "Id Magasin" as "Id_Magasin",
@@ -107,38 +109,38 @@ from "STORE_PRICE_DEC"
 ```
 
 ### Copy values from one column to another
-```
+```sql
 UPDATE article_comp
 SET "Code_Produit" = "Gencod"
 WHERE concurrent = 'mrbricolage'
 ```
 
 ### REMOVE .0 FROM A COLUMN
-```
+```sql
 UPDATE article_comp SET "Code_Produit"=trim(trailing '.0' FROM "Code_Produit"::text)
 WHERE concurrent = 'mrbricolage'
 ```
 
 ### SELECT ORDER BY DATE
-```
+```sql
 select * from  comments
 order by created_at desc;
 ```
 
 ### DELETE ORDER BY DATE
-```
+```sql
 DELETE FROM table_name
 WHERE condition;
 ```
 
 ### INSERT VALUES INTO A TABLE FROM A SELECT QUERY
-```
+```sql
 insert into <tableName1>
 select * from <tableName2> where item_id=2;
 ```
 
 ### GROUP BY AND COUNT
-```
+```sql
 SELECT count(sirene) as sirene_count, activiteprincipaleetablissement, trancheeffectifsetablissement  FROM sirene
 group by activiteprincipaleetablissement, trancheeffectifsetablissement
 ```
@@ -152,7 +154,7 @@ AND a.ctid < b.ctid
 ```
 
 ### DROP DUPLICATES BY COLUMNS
-```
+```sql
 DELETE from matching_products a using matching_products b
 WHERE a.ctid < b.ctid
 AND  a.material_code = b.material_code
@@ -187,6 +189,11 @@ ORDER BY
 ### CREATE INDEX
 ```sql
 CREATE INDEX index_id_august ON public."STORE_PRICE_AUGUST" USING btree ("Id Magasin", "Code Produit");
+```
+
+### DROP INDEX
+```sql
+DROP INDEX title_idx;
 ```
 
 ### CAST VARIABLES INDEX
