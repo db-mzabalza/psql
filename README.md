@@ -45,10 +45,14 @@ tail -f postgresql-11-main.log
 ```
 
 ### Show columns in table:
-```SELECT column_name, data_type from information_schema.columns WHERE table_name = 'table_name'```
+```sql
+SELECT column_name, data_type from information_schema.columns WHERE table_name = 'table_name'
+```
 
 ### Save query in .csv table
-```copy (SELECT * FROM "STORE_PRICE_AUGUST" where "Code Produit" = '1267413') To '/home/mzabalza/test.csv' CSV DELIMITER ',' HEADER```
+```sql
+copy (SELECT * FROM "STORE_PRICE_AUGUST" where "Code Produit" = '1267413') To '/home/mzabalza/test.csv' CSV DELIMITER ',' HEADER
+```
 
 # POSTGRES SQL QUERIES
 
@@ -70,7 +74,7 @@ RIGHT JOIN (
 	
 ON orange."INSEE_COM" = sirene."codecommuneetablissement"
 ```
-```
+```sql
 SELECT * FROM sirene
 WHERE sirene.codecommuneetablissement in (
 	SELECT distinct(depcom) from city
@@ -147,7 +151,7 @@ group by activiteprincipaleetablissement, trancheeffectifsetablissement
 
 
 ### DROP DUPLICATES GENERAL
-```
+```sql
 DELETE from matching_products a using matching_products b
 WHERE a = b 
 AND a.ctid < b.ctid
