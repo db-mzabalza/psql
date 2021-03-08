@@ -143,6 +143,8 @@ insert into <tableName1>
 select * from <tableName2> where item_id=2;
 ```
 
+## GROUP BY
+
 ### GROUP BY AND COUNT
 ```sql
 SELECT count(sirene) as sirene_count, activiteprincipaleetablissement, trancheeffectifsetablissement  FROM sirene
@@ -200,10 +202,14 @@ CREATE INDEX index_id_august ON public."STORE_PRICE_AUGUST" USING btree ("Id Mag
 DROP INDEX title_idx;
 ```
 
-### CAST VARIABLES INDEX
+### CAST VARIABLES
 ```sql
 SELECT *
 FROM table_a a
 LEFT JOIN table_b b
 ON column_a::VARCHAR = column_b 
 ```
+
+
+
+
