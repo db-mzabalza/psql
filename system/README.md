@@ -1,4 +1,58 @@
+# psql
+basic psql commands
 
+### List Users
+```\du```
+
+### List databases
+```\l```
+
+### Go to database
+```\c <databaseName>```
+
+### Lists tables, views and sequences with their associated access privileges.
+```\dp```
+
+### Create User
+```CREATE USER melkhalil with PASSWORD '<passwordName>';```
+
+### Altering existing users permissions
+```ALTER USER ttsering with CREATEDB CREATEROLE SUPERUSER;```
+
+### Give all the permissions to a user on a DB
+```GRANT ALL PRIVILEGES ON DATABASE <dbName> to <userName>;```
+
+### Give all the permissions to a user on a DB
+```GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA schema_name TO username;```
+
+
+### Grant all privileges on all tables in the schema:
+```GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA schema_name TO username;```
+
+### Grant access to tables which will be created in future
+```
+alter default privileges in schema public grant all on tables to oleroy;
+```
+
+### Restart postgres
+```
+sudo systemctl restart postgresql.service
+```
+
+### Check logs
+```
+tail -f postgresql-11-main.log
+```
+
+### Show columns in table:
+```sql
+SELECT column_name, data_type from information_schema.columns WHERE table_name = 'table_name'
+```
+
+### Save query in .csv table
+```sql
+copy (SELECT * FROM "STORE_PRICE_AUGUST" where "Code Produit" = '1267413') To '/home/mzabalza/test.csv' CSV DELIMITER ',' HEADER
+```
 # psql system
 basic psql commands
 
